@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9C51F022E69D416006BEB78 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C9C51F012E69D416006BEB78 /* Alamofire */; };
-		C9C51F042E69D416006BEB78 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C9C51F032E69D416006BEB78 /* AlamofireDynamic */; };
-		C9C51F072E69D42A006BEB78 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = C9C51F062E69D42A006BEB78 /* SwiftLintFramework */; };
+		C97F48FA2E69DDAE00F9C79A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C97F48F92E69DDAE00F9C79A /* Alamofire */; };
+		C97F490F2E69E1A000F9C79A /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = C97F490E2E69E1A000F9C79A /* FirebaseAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,19 +28,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C51F022E69D416006BEB78 /* Alamofire in Frameworks */,
-				C9C51F042E69D416006BEB78 /* AlamofireDynamic in Frameworks */,
-				C9C51F072E69D42A006BEB78 /* SwiftLintFramework in Frameworks */,
+				C97F48FA2E69DDAE00F9C79A /* Alamofire in Frameworks */,
+				C97F490F2E69E1A000F9C79A /* FirebaseAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C97F48FD2E69DE4000F9C79A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C9C51EC02E69C92D006BEB78 = {
 			isa = PBXGroup;
 			children = (
 				C9C51ECB2E69C92E006BEB78 /* AuthTestApp */,
+				C97F48FD2E69DE4000F9C79A /* Frameworks */,
 				C9C51ECA2E69C92E006BEB78 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +70,7 @@
 				C9C51EC52E69C92E006BEB78 /* Sources */,
 				C9C51EC62E69C92E006BEB78 /* Frameworks */,
 				C9C51EC72E69C92E006BEB78 /* Resources */,
+				C971F5042E6A3F7C006A065F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -74,9 +81,8 @@
 			);
 			name = AuthTestApp;
 			packageProductDependencies = (
-				C9C51F012E69D416006BEB78 /* Alamofire */,
-				C9C51F032E69D416006BEB78 /* AlamofireDynamic */,
-				C9C51F062E69D42A006BEB78 /* SwiftLintFramework */,
+				C97F48F92E69DDAE00F9C79A /* Alamofire */,
+				C97F490E2E69E1A000F9C79A /* FirebaseAI */,
 			);
 			productName = AuthTestApp;
 			productReference = C9C51EC92E69C92E006BEB78 /* AuthTestApp.app */;
@@ -107,8 +113,8 @@
 			mainGroup = C9C51EC02E69C92D006BEB78;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C9C51F002E69D416006BEB78 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C9C51F052E69D42A006BEB78 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				C97F48F82E69DDAE00F9C79A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C97F490D2E69E1A000F9C79A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C9C51ECA2E69C92E006BEB78 /* Products */;
@@ -129,6 +135,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C971F5042E6A3F7C006A065F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9C51EC52E69C92E006BEB78 /* Sources */ = {
@@ -270,6 +298,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AuthTestApp/Preview Content\"";
 				DEVELOPMENT_TEAM = PYCAA238P6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,6 +333,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AuthTestApp/Preview Content\"";
 				DEVELOPMENT_TEAM = PYCAA238P6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -352,7 +382,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9C51F002E69D416006BEB78 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		C97F48F82E69DDAE00F9C79A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -360,31 +390,26 @@
 				minimumVersion = 5.10.2;
 			};
 		};
-		C9C51F052E69D42A006BEB78 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		C97F490D2E69E1A000F9C79A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.60.0;
+				minimumVersion = 12.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9C51F012E69D416006BEB78 /* Alamofire */ = {
+		C97F48F92E69DDAE00F9C79A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9C51F002E69D416006BEB78 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = C97F48F82E69DDAE00F9C79A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		C9C51F032E69D416006BEB78 /* AlamofireDynamic */ = {
+		C97F490E2E69E1A000F9C79A /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9C51F002E69D416006BEB78 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
-		C9C51F062E69D42A006BEB78 /* SwiftLintFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C51F052E69D42A006BEB78 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = SwiftLintFramework;
+			package = C97F490D2E69E1A000F9C79A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
