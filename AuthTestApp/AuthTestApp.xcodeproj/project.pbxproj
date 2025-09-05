@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C964084D2E6A634600A5243A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C964084C2E6A634600A5243A /* GoogleService-Info.plist */; };
 		C97F48FA2E69DDAE00F9C79A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C97F48F92E69DDAE00F9C79A /* Alamofire */; };
 		C97F490F2E69E1A000F9C79A /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = C97F490E2E69E1A000F9C79A /* FirebaseAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C964084C2E6A634600A5243A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9C51EC92E69C92E006BEB78 /* AuthTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +51,7 @@
 				C9C51ECB2E69C92E006BEB78 /* AuthTestApp */,
 				C97F48FD2E69DE4000F9C79A /* Frameworks */,
 				C9C51ECA2E69C92E006BEB78 /* Products */,
+				C964084C2E6A634600A5243A /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C964084D2E6A634600A5243A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
