@@ -16,16 +16,9 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            if let apiKey = Secrets.googleAPIKey {
-                print("Google API Key: \(apiKey)")
-            } else {
-                print("Google API Key not found.")
-            }
-        }
     }
 }
 
-//#Preview {
-//    ContentView()
-//}
+#Preview {
+    ContentView()
+}
