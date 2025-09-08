@@ -13,8 +13,6 @@ struct WelcomeView: View {
 
     private let horizontalPadding: CGFloat = 16
 
-
-
     var body: some View {
         ZStack {
             Color(.appBackground)
@@ -45,7 +43,7 @@ private extension WelcomeView {
     var topBar: some View {
         HStack {
             Spacer()
-            Button("Skip") {
+            Button(Resources.WelcomeScreen.skipButtonText) {
                 // TODO: переход на основной экран без авторизации
             }
             .font(.system(size: 17, weight: .regular))
@@ -56,12 +54,12 @@ private extension WelcomeView {
 
     var welcomeTexts: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Welcome")
+            Text(Resources.WelcomeScreen.welcomeHeaderText)
                 .textCase(.uppercase)
                 .font(.customTitleFont(size: 64))
                 .foregroundColor(.titleText)
 
-            Text("Enter your phone number. We will send you an SMS with a confirmation code to this number.")
+            Text(Resources.WelcomeScreen.welcomeText)
                 .font(.system(size: 14, weight: .regular))
                 .foregroundColor(.mainText)
                 .fixedSize(horizontal: false, vertical: true)
@@ -84,11 +82,11 @@ private extension WelcomeView {
 
     var socialButtons: some View {
         VStack(spacing: 12) {
-            socialButton(title: "Continue with Apple", imageName: .appleIcon) {
+            socialButton(title: Resources.WelcomeScreen.appleButtonText, imageName: .appleIcon) {
                 print("Apple")
             }
 
-            socialButton(title: "Continue with Google", imageName: .googleIcon) {
+            socialButton(title: Resources.WelcomeScreen.googleButtonText, imageName: .googleIcon) {
                 print("Google")
             }
         }
@@ -96,23 +94,23 @@ private extension WelcomeView {
 
     var termsText: some View {
         VStack(spacing: 4) {
-            Text("By continuing, you agree to Assetsy’s")
+            Text(Resources.WelcomeScreen.agreeText)
                 .font(.footnote)
                 .foregroundColor(.tintText)
 
             HStack(spacing: 4) {
-                Button("Terms of Use") {
+                Button(Resources.WelcomeScreen.termsOfUseButtonText) {
                     // TODO: открыть ссылку
                 }
                 .foregroundStyle(.linkText)
                 .font(.footnote)
                 .underline()
 
-                Text("and")
+                Text(Resources.WelcomeScreen.andText)
                     .font(.footnote)
                     .foregroundColor(.tintText)
 
-                Button("Privacy Policy") {
+                Button(Resources.WelcomeScreen.privacyPolicyButtonText) {
                     // TODO: открыть ссылку
                 }
                 .foregroundStyle(.linkText)
